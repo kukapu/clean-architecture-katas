@@ -6,7 +6,9 @@ export class NameValueObject extends Object {
     this.value = value;
   }
 
-  validate(): boolean {
-    return this.value.length > 0;
+  validate(): void {
+    if (this.value.length < 0 ) {
+      throw new Error("El nombre no puede ir vacio")
+    }
   }
 }

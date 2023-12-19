@@ -1,4 +1,7 @@
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+import type {Config} from 'jest';
+
+export default async (): Promise<Config> => {
+  return {
+    verbose: true,
+  };
 };

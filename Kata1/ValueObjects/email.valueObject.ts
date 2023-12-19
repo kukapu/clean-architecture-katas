@@ -8,7 +8,9 @@ export class EmailValueObject {
     this.value = value
   }
 
-  private validate(): boolean {
-    return this.value.match(emailRegex) === null ? false : true
+  public validate(): void {
+    if (this.value.match(emailRegex) === null ) {
+      throw new Error("Email no válido")
+    }
   }
 }

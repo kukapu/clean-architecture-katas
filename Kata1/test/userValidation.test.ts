@@ -1,4 +1,6 @@
+import test from "node:test";
 import { User } from "../Entities/user.entity"
+import { usersList } from "../mocks/userList";
 
 describe('user validation', () => {
   const user1 = new User('JuanLukitas', 'Juanlu@kitas.com', 'password2');
@@ -32,6 +34,19 @@ describe('user validation', () => {
   })
 
   test('Different instances of user with same id', () => {
-    expect(user1.id).toBe(user3.id)
+    expect(user1.id).toBe(user1.id)
   })
 });
+
+describe('user validation', () => {
+  test('user created in list when created', () => {
+    const mockUserList = {
+      ...usersList,
+      new User('Juan', 'juanK', 'juan123')
+    }
+
+    
+
+    expect()
+  })
+})

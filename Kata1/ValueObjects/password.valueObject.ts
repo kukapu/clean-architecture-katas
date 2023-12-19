@@ -1,14 +1,16 @@
 const passwordRegex = /^(?=.*[a-zA-Z0-9]).{9,}$/;
 
-export class PasswordValueObject extends Object {
+export class PasswordValueObject {
   private value: string;
 
   constructor(value: string) {
-    super();
+    this.validate()
     this.value = value;
   }
 
-  validate(): boolean {
-    return this.value.match(passwordRegex) === null ? false : true
+  validate(): void {
+    if (this.value.match(passwordRegex) === null ) {
+      throw new Error("Password no válida")
+    }
   }
 }
